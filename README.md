@@ -79,7 +79,7 @@ If you'd like to adapt these scripts to run all tools in Docker containers, I wo
 ### Contributing
 Contributions are welcome! If you discover any issues or have ideas for improvement, feel free to open an issue or submit a pull request.
 
-
+---
 
 ### License
 This project is licensed under the MIT License. See the LICENSE file for details.
