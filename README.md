@@ -10,6 +10,18 @@ Visit my blog [AI Box](https://ai-box.eu), where I write about AI, generative AI
 
 ---
 
+## Important Note on Docker Usage
+
+While Docker is widely recognized as a powerful and flexible tool for containerized deployments, only the `install_ollama_web_ui.sh` script uses Docker. This is because, for the other tools, Docker's internal network configuration posed challenges in making them accessible over the local network to other users and PCs for the autor. 
+
+For tools like Flowise, n8n, and Ollama, the scripts use local installations without Docker to ensure they are exposed directly to your intranet, providing seamless access for all devices within the same local network.
+
+Docker is still leveraged for the Ollama Web UI installation, where its features align perfectly with the requirements of that specific tool.
+
+If you'd like to adapt these scripts to run all tools in Docker containers, I would be thrilled to see your contributions and ideas!
+
+---
+
 ## Scripts Overview
 
 ### 1. `ubuntu_install.sh`
