@@ -58,6 +58,13 @@ If you'd like to adapt these scripts to run all tools in Docker containers, I wo
   - Configures it as a systemd service for automatic startup.
   - Runs Flowise on a specified port (`3001`) and makes it accessible over the local network.
 
+### 6. `install_whisper_offline.sh`  
+   **Purpose**: Installs OpenAI's Whisper project for offline speech-to-text transcription.  
+   **Details**:
+   - Sets up Whisper in an isolated Python virtual environment for offline usage.
+   - Downloads and installs dependencies locally.
+   - Fetches and configures the Whisper base model for transcription tasks.
+   - Ensures the system is ready for running Whisper without requiring an internet connection.
 ---
 
 ## How to Use
