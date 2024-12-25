@@ -24,7 +24,7 @@ If you'd like to adapt these scripts to run all tools in Docker containers, I wo
 
 ## Scripts Overview
 
-### 1. `ubuntu_install.sh`
+### 1. `install_ubuntu.sh`
 - **Purpose**: Prepares your Ubuntu system with essential tools and dependencies for generative AI tools and development.
 - **Hint**: The installation methods used in these scripts assume that your system is equipped with a NVIDIA RTX graphics card like a RTX 4090, A6000 or even better.
 - **Details**:
