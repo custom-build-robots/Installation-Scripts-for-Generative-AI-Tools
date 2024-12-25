@@ -4,16 +4,6 @@
 # Version: 1.2
 # Description: This script installs OpenAI's Whisper project for offline usage on an Ubuntu machine.
 
-
-# Generate a Hugging Face Access Token:
-
-# Log in to your Hugging Face account.
-# Go to your Access Tokens page.
-# Generate a new token and copy it.
-# Update the Script to Use the Token: Add your Hugging Face token to the wget command for authentication.
-# Define the Hugging Face token (replace YOUR_HUGGINGFACE_TOKEN with your token)
-HUGGINGFACE_TOKEN="YOUR_HUGGINGFACE_TOKEN"
-
 # Exit immediately if a command exits with a non-zero status
 set -e
 
@@ -78,10 +68,9 @@ mkdir -p "$MODELS_DIR"
 # https://github.com/openai/whisper/blob/main/whisper/__init__.py
 
 # Define the model URL and download it with authentication
-MODEL_URL="https://huggingface.co/openai/whisper-base/resolve/main/model.bin"
+MODEL_URL="https://huggingface.co/openai/whisper-base/resolve/main/pytorch_model.bin"
 echo "Downloading the Whisper base model with authentication..."
-wget --header="Authorization: Bearer $HUGGINGFACE_TOKEN" -O "$MODELS_DIR/model.bin" "$MODEL_URL"
-
+wget -O "$MODELS_DIR/pytorch_model.bin" "$MODEL_URL"
 
 # Test Whisper installation
 echo "Testing Whisper installation..."
