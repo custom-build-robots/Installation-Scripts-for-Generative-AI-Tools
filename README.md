@@ -91,7 +91,7 @@ This ensures that systemd recognizes any changes made to the service files.
    ```bash
    sudo systemctl restart flowise
    
-   Replace flowise with the name of the service you are restarting (e.g., n8n or ollama).
+Replace flowise with the name of the service you are restarting (e.g., n8n or ollama).
 
 3. **Check the status of the service**:
 
