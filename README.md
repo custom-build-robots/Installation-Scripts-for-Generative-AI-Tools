@@ -76,6 +76,32 @@ If you'd like to adapt these scripts to run all tools in Docker containers, I wo
 
 ---
 
+## Using `systemctl` Commands
+
+After modifying or updating any of the service-related scripts (e.g., changing ports or configurations), it’s important to ensure the changes are applied to the respective systemd service. Use the following commands:
+
+1. **Reload the systemd manager configuration**:
+   ```bash
+   sudo systemctl daemon-reload
+
+This ensures that systemd recognizes any changes made to the service files.
+
+2. **Restart the specific service**:
+
+   ```bash
+   sudo systemctl restart flowise
+   Replace flowise with the name of the service you are restarting (e.g., n8n or ollama).
+
+3. **Check the status of the service**:
+
+   ```bash
+   sudo systemctl status flowise
+   This displays the current status of the service, including whether it is running, any errors encountered, and recent log output.
+
+By following these steps, you can ensure that the latest changes to your service configurations take effect.
+
+---
+
 ### Contributing
 Contributions are welcome! If you discover any issues or have ideas for improvement, feel free to open an issue or submit a pull request.
 
