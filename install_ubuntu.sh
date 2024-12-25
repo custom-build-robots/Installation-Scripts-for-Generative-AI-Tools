@@ -7,10 +7,10 @@
 
 # Hints:
 # Make the script executable to run it locally with the following command
-# chmod +x setup_server.sh
+# chmod +x install_ubuntu.sh
 
 # Run the script with the following command:
-# ./ubuntu_install.sh
+# ./install_ubuntu.sh
 
 # Exit immediately if a command exits with a non-zero status
 set -e
