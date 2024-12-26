@@ -68,7 +68,12 @@ mkdir -p "$MODELS_DIR"
 # https://github.com/openai/whisper/blob/main/whisper/__init__.py
 
 # Define the model URL and download it with authentication
+# https://huggingface.co/models?search=openai/whisper
 MODEL_URL="https://huggingface.co/openai/whisper-base/resolve/main/pytorch_model.bin"
+# MODEL_URL="https://huggingface.co/openai/whisper-large/resolve/main/pytorch_model.bin"
+# MODEL_URL="https://huggingface.co/openai/whisper-large-v3/blob/main/pytorch_model.bin"
+
+
 echo "Downloading the Whisper base model with authentication..."
 wget -O "$MODELS_DIR/pytorch_model.bin" "$MODEL_URL"
 
