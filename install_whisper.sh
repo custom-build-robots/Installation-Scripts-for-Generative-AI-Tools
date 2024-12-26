@@ -71,7 +71,7 @@ mkdir -p "$MODELS_DIR"
 # https://huggingface.co/models?search=openai/whisper
 MODEL_URL="https://huggingface.co/openai/whisper-base/resolve/main/pytorch_model.bin"
 # MODEL_URL="https://huggingface.co/openai/whisper-large/resolve/main/pytorch_model.bin"
-# MODEL_URL="https://huggingface.co/openai/whisper-large-v3/blob/main/pytorch_model.bin"
+# MODEL_URL="https://huggingface.co/openai/whisper-large-v3/resolve/main/pytorch_model.bin"
 
 
 echo "Downloading the Whisper base model with authentication..."
