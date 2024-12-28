@@ -23,7 +23,7 @@ sudo apt-get update && sudo apt upgrade -y
 # Install necessary tools
 echo "Now we are installing a few tools we always need..."
 sleep 3
-sudo apt-get install -y mc openssh-server curl net-tools npm postgresql nodejs ffmpeg yt-dlp gnome-screenshot
+sudo apt-get install -y mc openssh-server curl net-tools npm postgresql nodejs ffmpeg yt-dlp gnome-screenshot obs-studio gradio
 
 # Install NVIDIA utils
 echo "Now we are installing the NVIDIA Utils 550..."
