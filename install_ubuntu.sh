@@ -58,5 +58,12 @@ echo "Installation was completed successfully."
 # Prompt user for confirmation before reboot
 read -p "The system needs to reboot to apply changes. Press Enter to reboot or Ctrl+C to cancel..."
 
+# installing chrome
+echo "Now installing chrome as browser"
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
 # Reboot the system to apply changes
+echo "Now rebooting the system"
+sleep 3
 sudo reboot
