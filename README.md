@@ -65,6 +65,14 @@ If you'd like to adapt these scripts to run all tools in Docker containers, I wo
    - Downloads and installs dependencies locally.
    - Fetches and configures the Whisper base model for transcription tasks.
    - Ensures the system is ready for running Whisper without requiring an internet connection.
+
+### 7. `install_automatic1111.sh` 
+   **Purpose**: Installs Automatic1111 for picture generating.  
+   **Details**:
+   - Sets up Automatic1111 in an isolated Python virtual environment with Python 3.11.
+   - Downloads and installs dependencies locally.
+   - Fetches and configures a stable diffusion base model for picture generation.
+   - Ensures the system is ready for running Automatic1111 without requiring an internet connection or starting Automatic1111 manually.
 ---
 
 ## How to Use
