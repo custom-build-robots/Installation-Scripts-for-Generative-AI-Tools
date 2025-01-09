@@ -71,6 +71,8 @@ After=network.target
 
 [Service]
 Type=simple
+# ExecStart=/home/ingmar/stable-diffusion-webui/venv_automatic1111/bin/python /home/ingmar/stable-diffusion-webui/launch.py --share --listen --port 7864 --ckpt-dir /mnt/temp_03/Stable_Diffusion_models/
+# ExecStart=$REPO_DIR/venv_automatic1111/bin/python $REPO_DIR/launch.py --share --port 7864
 ExecStart=$REPO_DIR/venv_automatic1111/bin/python $REPO_DIR/launch.py --share --listen --port 7864
 WorkingDirectory=$REPO_DIR
 User=$(whoami)
