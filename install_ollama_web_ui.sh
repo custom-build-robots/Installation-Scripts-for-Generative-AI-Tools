@@ -51,7 +51,7 @@ sudo docker run -d --network="host" \
 # Notify user of successful installation
 echo "Installation was completed successfully. Access Open WebUI at http://<your-host-ip>:3000"
 server_ip=$(hostname -I | awk '{print $1}')
-echo "Access Open WebUI at http://$server_ip:3000"
+echo "Access Open WebUI at http://$server_ip:8080"
 
 # Prompt user for confirmation before reboot
 read -p "The system needs to reboot to apply changes. Press Enter to reboot or Ctrl+C to cancel..."
