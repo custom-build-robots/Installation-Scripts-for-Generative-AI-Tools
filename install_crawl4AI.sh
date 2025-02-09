@@ -1,11 +1,11 @@
 #!/bin/bash
 # Author: Your Name
 # Date: 2025-02-09
-# Version: 0.9
+# Version: 1.0
 # Description:
 #   This script installs Crawl4AI by cloning its repository, overriding its compose
-#   file with a patched version for local builds, and then building and running the
-#   Docker container (AMD64) via Docker Compose.
+#   file with a patched version for local builds, building and running the Docker container
+#   (AMD64) via Docker Compose, and installing Playwright's Chromium browser inside the container.
 #
 #   Once completed, Crawl4AI will be accessible on port 11235.
 #
@@ -13,18 +13,9 @@
 #   - Ensure any required environment variables (e.g., API tokens) are set.
 #   - The script uses the "local-amd64" profile defined in our patched compose file.
 #   - The repository URL is assumed to be https://github.com/unclecode/crawl4ai.git
-
-# Note on Architecture Compatibility:
-# The official Crawl4AI Docker Hub repository now includes prebuilt images for AMD64 (e.g., the basic-amd64 tag). This means you can either:
-#
-# Pull and run the official AMD64 image directly:
-#
-# docker pull unclecode/crawl4ai:basic-amd64
-# docker run -p 11235:11235 unclecode/crawl4ai:basic-amd64
-#
-# Use our installation script to clone the repository and build the image locally: 
-# This approach ensures you always have the latest code and avoids potential issues if the default tag isn't yet updated for AMD64.
-# Choose the method that best fits your needs!
+#   - The Playwright installation ensures that the required browser (Chromium) is available
+#     for crawling tasks. If you re-create the container, you may need to re-run the installation
+#     or update the Dockerfile to include "RUN playwright install chromium" permanently.
 
 # Exit immediately if any command fails.
 set -e
@@ -83,7 +74,8 @@ x-base-config: &base-config
     - "11235:11235"
     - "8000:8000"
     - "9222:9222"
-    - "8080:8080"
+    # The 8080 port mapping is commented out to avoid conflict with other services.
+    # - "8080:8080"
   environment:
     - CRAWL4AI_API_TOKEN=${CRAWL4AI_API_TOKEN:-}
     - OPENAI_API_KEY=${OPENAI_API_KEY:-}
@@ -156,6 +148,18 @@ docker-compose --profile local-amd64 up -d
 
 echo "Verifying the container status..."
 docker ps --filter "name=crawl4ai-amd64" || true
+
+# Retrieve the container name (assuming the name contains "crawl4ai-crawl4ai-amd64")
+CONTAINER=$(docker ps --filter "name=crawl4ai-crawl4ai-amd64" --format "{{.Names}}" | head -n 1)
+
+if [ -z "$CONTAINER" ]; then
+    echo "Error: Could not determine the Crawl4AI container name."
+    exit 1
+fi
+
+echo "Installing Playwright browsers (Chromium) inside the container $CONTAINER..."
+# Install Chromium using Playwright inside the container.
+docker exec -it "$CONTAINER" playwright install chromium
 
 # Get the server's IP address (first IP listed).
 SERVER_IP=$(hostname -I | awk '{print $1}')
