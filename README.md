@@ -73,6 +73,32 @@ If you'd like to adapt these scripts to run all tools in Docker containers, I wo
    - Downloads and installs dependencies locally.
    - Fetches and configures a stable diffusion base model for picture generation.
    - Ensures the system is ready for running Automatic1111 without requiring an internet connection or starting Automatic1111 manually.
+
+### 8. Crawl4AI Installation Script
+This script automates the deployment of Crawl4AI on Ubuntu servers using Docker and Docker Compose. It performs the following tasks:
+
+**System Setup:**
+Updates your system and installs necessary tools such as curl, git, Docker, and Docker Compose.
+
+**Repository Management:**
+Clones (or updates) the official Crawl4AI repository into /opt/crawl4ai, ensuring all required files (e.g., Dockerfile, requirements.txt) are present.
+
+**Configuration Patching:** 
+Overrides the default docker-compose.yml with a patched version that removes the conflicting port mapping for 8080 (used by other tools like Ollama Web UI) so that Crawl4AI runs exclusively on port 11235 (and other necessary ports).
+
+**Container Deployment:**
+Builds the Docker image for AMD64 using the local-amd64 profile and starts the container, making Crawl4AI accessible at http://<your-server-ip>:11235.
+
+**How to Update Crawl4AI:**
+To update Crawl4AI to the latest version, simply re-run the script—it will pull the latest changes from the repository and rebuild the container automatically.
+
+**Usage:**
+
+bash
+Kopieren
+sudo ./install_crawl4AI.sh
+This script is included alongside other installation scripts in this repository, providing an easy, one-command setup for generative AI tools.
+
 ---
 
 ## How to Use
