@@ -100,7 +100,7 @@ This script is included alongside other installation scripts in this repository,
 
 ---
 
-## How to Use
+## How to Use those scripts:
 
 1. Clone the repository to your Ubuntu system:
    ```bash
