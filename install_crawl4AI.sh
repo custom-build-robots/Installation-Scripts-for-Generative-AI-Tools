@@ -14,6 +14,18 @@
 #   - The script uses the "local-amd64" profile defined in our patched compose file.
 #   - The repository URL is assumed to be https://github.com/unclecode/crawl4ai.git
 
+# Note on Architecture Compatibility:
+# The official Crawl4AI Docker Hub repository now includes prebuilt images for AMD64 (e.g., the basic-amd64 tag). This means you can either:
+#
+# Pull and run the official AMD64 image directly:
+#
+# docker pull unclecode/crawl4ai:basic-amd64
+# docker run -p 11235:11235 unclecode/crawl4ai:basic-amd64
+#
+# Use our installation script to clone the repository and build the image locally: 
+# This approach ensures you always have the latest code and avoids potential issues if the default tag isn't yet updated for AMD64.
+# Choose the method that best fits your needs!
+
 # Exit immediately if any command fails.
 set -e
 
