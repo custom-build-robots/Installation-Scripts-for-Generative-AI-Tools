@@ -17,6 +17,19 @@
 #     for crawling tasks. If you re-create the container, you may need to re-run the installation
 #     or update the Dockerfile to include "RUN playwright install chromium" permanently.
 
+# Using an .env File:
+# Create an .env file in the same directory as your docker-compose.yml (in /opt/crawl4ai) with the following content:
+# sudo nano /opt/crawl4ai/.env
+#
+# .env
+# CRAWL4AI_API_TOKEN=your-secret-api-token
+# OPENAI_API_KEY=your-openai-api-key
+# CLAUDE_API_KEY=your-claude-api-key
+
+# Test the secret via curl:
+# curl -H "Authorization: Bearer your-secret-api-token" http://192.168.2.57:11235/crawl/health
+
+
 # Exit immediately if any command fails.
 set -e
 
