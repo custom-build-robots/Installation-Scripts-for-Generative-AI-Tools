@@ -75,7 +75,7 @@ If you'd like to adapt these scripts to run all tools in Docker containers, I wo
    - Ensures the system is ready for running Automatic1111 without requiring an internet connection or starting Automatic1111 manually.
 
 ### 8. `install_crawl4AI.sh`
-   **This script automates the deployment of Crawl4AI on Ubuntu servers using Docker and Docker Compose. It performs the following tasks:
+   **This script automates the deployment of Crawl4AI on Ubuntu servers using Docker and Docker Compose. It performs the following tasks:**
 
    **System Setup:**
    Updates your system and installs necessary tools such as curl, git, Docker, and Docker Compose.
